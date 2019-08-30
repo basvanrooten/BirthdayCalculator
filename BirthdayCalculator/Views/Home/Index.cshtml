@@ -1,0 +1,21 @@
+﻿@model BirthdayCalculator.Models.Person
+
+@{
+    ViewData["Title"] = "Start";
+}
+
+<div class="row">
+    <div class="col">
+        <h2>Welcome to the Birthday Calculator</h2>
+
+        <form class="form-inline" asp-action="Index" method="post">
+            <div class="form-group">
+                <input class="form-control" asp-for="Name" placeholder="Name" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="Birthday" placeholder="01/01/2019" />
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+</div>

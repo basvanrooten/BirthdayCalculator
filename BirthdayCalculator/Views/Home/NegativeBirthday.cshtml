@@ -1,0 +1,21 @@
+﻿@model BirthdayCalculator.Models.Person
+
+@{
+
+
+    DateTime nextBirthday = new DateTime(DateTime.Now.Year, Model.Birthday.Month, Model.Birthday.Day);
+
+    // If birthday has passed this year, add one year
+    if (DateTime.Now.CompareTo(nextBirthday) > 0)
+    {
+        nextBirthday = nextBirthday.AddYears(1);
+    }
+
+    TimeSpan timeSpan = nextBirthday - DateTime.Now;
+}
+
+<div class="row">
+    <div class="col">
+        <h1>Nog @timeSpan.Days dagen tot je verjaardag, @Html.DisplayFor(model => model.Name)</h1>
+    </div>
+</div>

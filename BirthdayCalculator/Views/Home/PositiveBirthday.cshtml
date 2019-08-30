@@ -1,0 +1,12 @@
+﻿@model BirthdayCalculator.Models.Person
+
+@{ 
+    int personAge = DateTime.Now.Year - Model.Birthday.Year;
+}
+
+<div class="row">
+    <div class="col">
+        <h1>@Html.DisplayFor(model => model.Name)</h1>
+        <h3>Van harte gefeliciteerd met je @personAge ste verjaardag!</h3>
+    </div>
+</div>
